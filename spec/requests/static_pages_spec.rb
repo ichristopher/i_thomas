@@ -1,5 +1,12 @@
 require 'spec_helper'
 
+# run me from bash/Terminal using:
+# $ bundle exec rspec spec/requests/static_pages_spec.rb --drb
+
+# run me from Sublime Text 2 using Command+Shift+R to run one test
+# use Command+Shift+T to run all tests in this file
+# use Command+Shift+E to run the "last" test, i.e., the previously run test
+
 describe "Static pages" do
 
   describe "Home page" do
