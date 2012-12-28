@@ -1,6 +1,12 @@
 IThomas::Application.routes.draw do
   
-  get "users/new"
+  # Sets RESTful resource access/routes for all "User" objects
+  # e.g., /users/1 and users/new and users/1/edit and so forth
+  # Note that it sets the routes/paths, but the pages still need to 
+  # be created by developer.
+  # The view files are in app/views/users/show.html.erb
+  # Corresponding actions are in app/controllers/users_controller.rb (e.g., def show)
+  resources :users
 
   root to: 'static_pages#home'
 
