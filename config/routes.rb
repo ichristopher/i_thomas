@@ -7,10 +7,15 @@ IThomas::Application.routes.draw do
   # The view files are in app/views/users/show.html.erb
   # Corresponding actions are in app/controllers/users_controller.rb (e.g., def show)
   resources :users
+  resources :sessions, only: [:new, :create, :destroy] # i.e., we don't need an update rest action, so no resource
+
 
   root to: 'static_pages#home'
 
   match '/signup',  to: 'users#new'
+  # Note that the session/ is implicit for "create"; the two below override the default named routes
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete # i.e., to use the HTTP DELETE request
   
   match '/help',    to: 'static_pages#help'
   match '/about',   to: 'static_pages#about'
